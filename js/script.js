@@ -4,11 +4,10 @@
      console.log ('Wywołano funkcję playGame'+ playerInput);  
         clearMessages();    
   }
-         playGame(3)
+         playGame(3);
 
 
-  buttonTest = document.getElementById('button-test');
-  buttonTest.addEventListener('click', function(){ buttonClicked('testowanie'); });
+  
   buttonRock = document.getElementById('button-rock');
   buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
   buttonPaper = document.getElementById('button-paper');

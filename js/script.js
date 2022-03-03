@@ -8,7 +8,7 @@
 
 
   buttonTest = document.getElementById('button-test');
-  buttonTest.addEventListener('click', function(){ buttonClicked('guzik TEST'); });
+  buttonTest.addEventListener('click', function(){ buttonClicked('TEST'); });
   buttonRock = document.getElementById('button-rock');
   buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
   buttonPaper = document.getElementById('button-paper');

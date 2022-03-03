@@ -1,6 +1,28 @@
-   
-  function getMoveName (argMoveId) { 
-      console.log ('Wywołano funkcję getMoveName z argumentem:'+ argMoveId);
+
+/*Kliknięcie przycisku*/  
+  function playGame(playerInput) {
+     console.log ('Wywołano funkcję playGame'+ playerInput);  
+        clearMessages();    
+  }
+         playGame(3)
+
+  let computerMove, playerMove, randomNumber;
+
+  buttonTest = document.getElementById('button-test');
+  buttonTest.addEventListener('click', function(){ buttonClicked('guzik TEST'); });
+  buttonRock = document.getElementById('button-rock');
+  buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
+  buttonPaper = document.getElementById('button-paper');
+  buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
+  ButtonScissors = document.getElementById('button-scissors');
+  ButtonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
+      
+  var argMoveId, argComputerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+
+    
+  /*Ruch gracza*/
+  function getMoveName (argComputerMoveId) { 
+      console.log (`Wywołano funkcję getMoveName z argumentem: + argMoveId`);
       if(argMoveId == 1) {
         return 'kamień';
       } else if (argMoveId == 2) {
@@ -8,13 +30,12 @@
       } else if (argMoveId == 3) {
         return 'nożyce';
       } else {
-          printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+          printMessage('Nie znam ruchu o id ' + argMoveId + ',');
           return 'nieznany ruch';
       } 
-  }    
+    }    
 
   function displayResult(argPlayerMove, argComputerMove) {
-      console.log ('Wywołanie funkcji displayResult');
       console.log ('argumenty:'+ argPlayerMove + ',' + argComputerMove);
       printMessage('Zagrałem' + argComputerMove + ', a Ty' + argPlayerMove);
 
@@ -29,8 +50,7 @@
       } else {
          printMessage('Przegrywasz...');
       }
-    }  
-       
+    }       
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('Wylosowana liczba to: ' + randomNumber);
 
@@ -53,7 +73,7 @@ let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.
 
 console.log('Gracz wpisał: ' + playerInput);
 */
-  let playerMove = getMoveName(randomNumber);
+ /* let playerMove = getMoveName(randomNumber);*/
 /*
 if(playerInput == '1'){
   playerMove = 'kamień';
@@ -93,4 +113,4 @@ if( computerMove == 'kamień' && playerMove == 'papier'){
 
 
 
-
+  

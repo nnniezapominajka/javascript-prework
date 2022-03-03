@@ -6,7 +6,6 @@
   }
          playGame(3)
 
-  let computerMove, playerMove, randomNumber;
 
   buttonTest = document.getElementById('button-test');
   buttonTest.addEventListener('click', function(){ buttonClicked('guzik TEST'); });
@@ -17,7 +16,7 @@
   ButtonScissors = document.getElementById('button-scissors');
   ButtonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
       
-  var argMoveId, argComputerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+  var argMoveId, argComputerMove, argComputerMove, playerInput;
 
     
   /*Ruch gracza*/

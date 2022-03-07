@@ -6,7 +6,7 @@
   }
         playGame(3);
 
- // var argMoveId, argPlayerMove, argComputerMove, ComputerMove, playerMove, randomNumber, playerInput;
+  var argMoveId, argPlayerMove, argComputerMove, ComputerMove, playerMove, randomNumber, playerInput;
 
   //ruch gracza
   playerMove = argButtonName;

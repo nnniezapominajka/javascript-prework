@@ -2,12 +2,10 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-
 .container {
     max-width: 1140px;
     padding: 0 60px;
     margin: auto;
-    background: #2980b9;
+    background:#2980b9; 
 }
-
 /*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */

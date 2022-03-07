@@ -1,4 +1,4 @@
-  //var argButtonName, buttonPaper, buttonRock, buttonScissors;
+  var argButtonName, buttonPaper, buttonRock, buttonScissors;
  //kliknięcie przycisków
   function buttonClicked(argButtonName) {
      clearMessages();

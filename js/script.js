@@ -1,14 +1,20 @@
-
 {
-  function playGame(playerInput) {
-     console.log(argButtonName + 'Wywołano funkcję playGame' + playerInput);
+  const spanWin = document.getElementById("win");
+  const spanLose = document.getElementById("lose");
+
+  let win = 0;
+  let lose = 0;
+
+  const playGame = function (playerInput) {
+    // console.log(argButtonName + 'Wywołano funkcję playGame' + playerInput);
      clearMessages();
-
-
-      let computerMove, playerMove, randomNumber;
-
-  function getMoveName(argMoveId) {
-    console.log('Wywołano funkcję getMoveName z argumentem:' + argMoveId);
+  const printMessage = function (msg) {
+    const div = document.createElement("div");
+    div.innerHTML = msg;
+    document.getElementById("messages").appendChild(div);
+  }
+  const getMoveName = function(argMoveId) {
+    //console.log('Wywołano funkcję getMoveName z argumentem:' + argMoveId);
      if(argMoveId == 1) {
         return 'kamień';
     } else if argMoveId == 2) {
@@ -18,36 +24,56 @@
     } else {
       printMessage('Nie znam ruchu o id ' + argMoveId + '.');
        return'nieznany ruch';
-    }
   }
 
-  function displayResult(argPlayerMove, argComputerMove) {
-      console.log ('wywołano funkcję displayResult z argumentami: ' + argPlayerMove + ',' + argComputerMove);
-      printMessage('Zagrałem' + argComputerMove + ', a Ty' + argPlayerMove);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
+  //console.log('Wylosowana liczba to:' + randomNumber);
+  const computerMove = getMoveName(randomNumber);
+  //playerMove = playerInput;
+  //displayResult(computerMove, playerMove);
 
-      if(argPlayerMove == 'papier' && argComputerMove == 'kamień') {
-        printMessage('Wygrywasz');
-      } else if (argPlayerMove =='kamień' && argComputerMove =='nożyce') {
+  printMessage("Mój ruch to:" + computerMove);
+
+  const playerMove = getMoveName(argPlayerInput);
+  printMessage("Twój ruch to:" +playerMove);
+
+  const displayResult = function(argPlayerMove, argComputerMove) {
+      //console.log ('wywołano funkcję displayResult z argumentami: ' + argPlayerMove + ',' + argComputerMove);
+      printMessage('Zagrałem' + argComputerMove + ', a Ty' + argPlayerMove);
+      if(playerMove == 'papier' && computerMove == 'kamień') {
+        win++;
         printMessage('Ty wygrywasz');
-      } else if (argPlayerMove == 'nożyce' && argComputerMove =='papier') {
+      } else if (playerMove =='kamień' && computerMove =='nożyce') {
+        win++;
         printMessage('Ty wygrywasz');
-      } else if (argPlayerMove == argComputerMove) {
+      } else if (playerMove == 'nożyce' && computerMove =='papier') {
+        win++;
+        printMessage('Ty wygrywasz');
+      } else if (playerMove == computerMove) {
         printMessage('Remis');
       } else {
+        lose++;
         printMessage('Przegrywasz...');
       }
+
+
+      spanWin.textContent = "" + win;
+      spanLose.textContent = "" + lose;
+    }
+
+    displayResult(computerMove, playerMove);
   }
 
-  randomNumber = Math.floor(Math.random() * 3 + 1);
-  console.log('Wylosowana liczba to:' + randomNumber);
-  computerMove = getMoveName(randomNumber);
-  playerMove = playerInput;
-  displayResult(computerMove, playerMove);
-
-}
-
-
-
+document.getElementById("play-rock").addEventListener("click", function() {
+  playGame(1);
+});
+document.getElementById("play-paper").addEventListener("click", function() {
+  playGame(2);
+});
+document.getElementById("play-scissors").addEventListener('click', function() {
+  playGame(3);
+});
+  }
 }
 /*
 if(randomNumber == 1){

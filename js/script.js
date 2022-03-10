@@ -1,18 +1,11 @@
-  var argButtonName, buttonPaper, buttonRock, buttonScissors;
 
-  function buttonClicked(argButtonName) {
+{
+  function playGame(playerInput) {
+     console.log(argButtonName + 'Wywołano funkcję playGame' + playerInput);
      clearMessages();
-     console.log(argButtonName + 'został kliknięty');
-  }
-        playGame(3)
 
-playerMove = argButtonName;
-console.log('ruch gracza to:' + playerMove);
-randomNumber = Math.floor(Math.random() * 3 + 1);
-console.log('ruch gracza to:' + randomNumber);
-computerMove = getMoveName(randomNumber);
-console.log('ruch komputera to:' + computerMove);
-displayResults(playerMove, computerMove);
+
+      let computerMove, playerMove, randomNumber;
 
   function getMoveName(argMoveId) {
     console.log('Wywołano funkcję getMoveName z argumentem:' + argMoveId);
@@ -23,27 +16,39 @@ displayResults(playerMove, computerMove);
     } else if argMoveId == 3) {
        return 'nożyce';
     } else {
-          printMessage('Nie znam ruchu o id ' + argMoveId + '.');
-      return'nieznany ruch';
+      printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+       return'nieznany ruch';
     }
   }
+
   function displayResult(argPlayerMove, argComputerMove) {
       console.log ('wywołano funkcję displayResult z argumentami: ' + argPlayerMove + ',' + argComputerMove);
       printMessage('Zagrałem' + argComputerMove + ', a Ty' + argPlayerMove);
 
       if(argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+        printMessage('Wygrywasz');
       } else if (argPlayerMove =='kamień' && argComputerMove =='nożyce') {
-         printMessage('Ty wygrywasz');
+        printMessage('Ty wygrywasz');
       } else if (argPlayerMove == 'nożyce' && argComputerMove =='papier') {
-         printMessage('Ty wygrywasz');
+        printMessage('Ty wygrywasz');
       } else if (argPlayerMove == argComputerMove) {
-         printMessage('Remis');
+        printMessage('Remis');
       } else {
-         printMessage('Przegrywasz...');
+        printMessage('Przegrywasz...');
       }
-    }
+  }
+
+  randomNumber = Math.floor(Math.random() * 3 + 1);
+  console.log('Wylosowana liczba to:' + randomNumber);
+  computerMove = getMoveName(randomNumber);
+  playerMove = playerInput;
+  displayResult(computerMove, playerMove);
+
+}
 
 
+
+}
 /*
 if(randomNumber == 1){
   computerMove = 'kamień';

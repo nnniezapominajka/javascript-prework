@@ -8,6 +8,16 @@
   const playGame = function (playerInput) {
     // console.log(argButtonName + 'Wywołano funkcję playGame' + playerInput);
      clearMessages();
+
+     //function printMessage(msg){
+     // let div = document.createElement('div');
+     // div.innerHTML = msg;
+    //  document.getElementById('messages').appendChild(div);
+    //}
+
+    //function clearMessages(){
+    //  document.getElementById('messages').innerHTML = '';
+    //}
   const printMessage = function (msg) {
     const div = document.createElement("div");
     div.innerHTML = msg;
